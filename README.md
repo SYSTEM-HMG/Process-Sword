@@ -1,12 +1,13 @@
 # Process-Sword
 Process Sword 是一款专注于 Windows 系统底层安全分析的工具，集进程管理、窗口管理、文件浏览、文件监控等操作于一体，适用于安全研究人员与系统管理员进行深度系统诊断。
 
-## ✨ 核心功能（v1.3）
+## ✨ 核心功能（v1.4）
 
 ### 🔍 进程管理
 - 枚举进程详细信息（路径、PID、PPL 级别、命令行等）
 - 支持多种方式结束进程（普通结束、极端结束）
 - 查询进程 PPL（Protected Process Light）级别
+- 可以强制删除某个进程的文件和强制结束进程
 
 ### 🧹 文件粉碎
 - 支持文件/文件夹粉碎，递归枚举子目录
@@ -24,6 +25,7 @@ Process Sword 是一款专注于 Windows 系统底层安全分析的工具，集
 ### 📁 文件管理
 - 枚举系统中的所有文件
 - 方便的强制删除和粉碎文件
+- 查看文件的属性，可以查看Sha1、Sha256、隐藏等属性
 
 ### 🗂️ 注册表管理
 - 查看系统的注册表
@@ -37,12 +39,12 @@ Process Sword 是一款专注于 Windows 系统底层安全分析的工具，集
 
 ---
 
-## 🛠️ 技术特点（v1.3）
+## 🛠️ 技术特点（v1.4）
 
 | 特点 | 说明 |
 |------|------|
 | **内核驱动支持** | 内置 `Process_Sword_Kernel.sys`，用于进程强杀等操作 |
-| **文件粉碎** | 提供强力删除功能 |
+| **文件粉碎** | 提供强力删除和文件粉碎功能 |
 | **单文件发布** | 主程序为单文件，运行时释放驱动与依赖（大小较小） |
 | **命令行 + GUI 双模式** | 支持图形界面与命令行操作，满足不同使用场景 |
 
@@ -56,4 +58,5 @@ Process Sword.exe /kill 1234         # 结束 PID 为 1234 的进程（ZwTermina
 Process Sword.exe /kill 1234 /f      # 极端模式结束进程（ZwTerminateProcess和PspTerminateProcess等多种方式）
 Process Sword.exe /PID "notepad.exe" # 将进程名转为 PID
 Process Sword.exe /im 1234           # 将 PID 转为进程名
+Process Sword.exe /del C:\text.txt   # 强制删除C:\text.txt文件，带上/f则为粉碎文件
 Process Sword.exe /help              # 查看帮助
