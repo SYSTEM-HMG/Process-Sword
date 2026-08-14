@@ -44,7 +44,7 @@ Process Sword 是一款专注于 Windows 系统底层安全分析的工具，集
 
 ---
 
-## 🛠️ 技术特点（v1.4）
+## 🛠️ 技术特点（v1.5）
 
 | 特点 | 说明 |
 |------|------|
@@ -65,3 +65,4 @@ Process Sword.exe /PID "notepad.exe" # 将进程名转为 PID
 Process Sword.exe /im 1234           # 将 PID 转为进程名
 Process Sword.exe /del C:\text.txt   # 强制删除C:\text.txt文件，带上/f则为粉碎文件
 Process Sword.exe /help              # 查看帮助
+（注：“/”和“-”的用法一致）
